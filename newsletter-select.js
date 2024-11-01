@@ -10,13 +10,11 @@ window.customElements.define(
 
 		connectedCallback() {
 			this.setAttribute('name', 'newsLetters');
-			const NewsletterData = (window.data =
-				(window && window.data) || {});
 			const shadow = (this.attachShadow({ mode: 'open' }).innerHTML = `
-				<input id='nl-select' class='select' type='checkbox' checked value='${newsletterData.newsletterId}' />
-				<label class='nl-select-label' for='nl-select'>${newsletterData.newsletterName}</label>`);
+				<input id='nl-select' class='select' type='checkbox' checked value='Daily News' />
+				<label class='nl-select-label' for='nl-select'>Daily News</label>`);
 			this.internals.setFormValue([
-				newsletterData.newsletterId,
+				'99',
 			]);
 			const style = document.createElement('style');
 			style.textContent = `
